@@ -15,9 +15,9 @@ export const Route = createFileRoute("/_authenticated/members")({
 });
 
 const items = [
-  { icon: FileText, title: "Quarterly Letter", desc: "Q1 2026 letter to members — published 14 April." },
-  { icon: BookOpen, title: "Strategy Notes", desc: "Detailed positioning across each of our four mandates." },
-  { icon: Calendar, title: "Members' Forum", desc: "Geneva, 12 June 2026. RSVP required." },
+  { icon: FileText, title: "Savings Statement", desc: "Your monthly contributions, voluntary savings, and current balance for the active cycle." },
+  { icon: BookOpen, title: "Constitution & By-Laws", desc: "The full GIA Constitution effective 1 January 2026, including loan and investment rules." },
+  { icon: Calendar, title: "Next Members' Meeting", desc: "Date, agenda, and venue for the upcoming General Assembly. RSVP via the Secretary." },
 ];
 
 function MembersPage() {
@@ -29,7 +29,7 @@ function MembersPage() {
       <PageHero
         eyebrow="Member Area"
         title={`Welcome, ${name}.`}
-        subtitle="Your private workspace for letters, reporting, and forum invitations."
+        subtitle="Your private workspace for savings statements, the GIA Constitution, and meeting notices."
       />
       <section className="py-20">
         <div className="container-x grid md:grid-cols-3 gap-px bg-border">

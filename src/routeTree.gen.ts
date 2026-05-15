@@ -9,9 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as InvestmentsRouteImport } from './routes/investments'
 import { Route as InsightsRouteImport } from './routes/insights'
@@ -21,6 +23,11 @@ import { Route as AuthenticatedRouteImport } from './routes/_authenticated'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedMembersRouteImport } from './routes/_authenticated/members'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
@@ -34,6 +41,11 @@ const SignupRoute = SignupRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -83,9 +95,11 @@ export interface FileRoutesByFullPath {
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/members': typeof AuthenticatedMembersRoute
 }
 export interface FileRoutesByTo {
@@ -95,9 +109,11 @@ export interface FileRoutesByTo {
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/members': typeof AuthenticatedMembersRoute
 }
 export interface FileRoutesById {
@@ -109,9 +125,11 @@ export interface FileRoutesById {
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/_authenticated/members': typeof AuthenticatedMembersRoute
 }
 export interface FileRouteTypes {
@@ -123,9 +141,11 @@ export interface FileRouteTypes {
     | '/insights'
     | '/investments'
     | '/login'
+    | '/privacy'
     | '/services'
     | '/signup'
     | '/team'
+    | '/terms'
     | '/members'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -135,9 +155,11 @@ export interface FileRouteTypes {
     | '/insights'
     | '/investments'
     | '/login'
+    | '/privacy'
     | '/services'
     | '/signup'
     | '/team'
+    | '/terms'
     | '/members'
   id:
     | '__root__'
@@ -148,9 +170,11 @@ export interface FileRouteTypes {
     | '/insights'
     | '/investments'
     | '/login'
+    | '/privacy'
     | '/services'
     | '/signup'
     | '/team'
+    | '/terms'
     | '/_authenticated/members'
   fileRoutesById: FileRoutesById
 }
@@ -162,13 +186,22 @@ export interface RootRouteChildren {
   InsightsRoute: typeof InsightsRoute
   InvestmentsRoute: typeof InvestmentsRoute
   LoginRoute: typeof LoginRoute
+  PrivacyRoute: typeof PrivacyRoute
   ServicesRoute: typeof ServicesRoute
   SignupRoute: typeof SignupRoute
   TeamRoute: typeof TeamRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/team': {
       id: '/team'
       path: '/team'
@@ -188,6 +221,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -269,9 +309,11 @@ const rootRouteChildren: RootRouteChildren = {
   InsightsRoute: InsightsRoute,
   InvestmentsRoute: InvestmentsRoute,
   LoginRoute: LoginRoute,
+  PrivacyRoute: PrivacyRoute,
   ServicesRoute: ServicesRoute,
   SignupRoute: SignupRoute,
   TeamRoute: TeamRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
