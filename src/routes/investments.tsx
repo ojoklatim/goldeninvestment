@@ -5,38 +5,38 @@ export const Route = createFileRoute("/investments")({
   head: () => ({
     meta: [
       { title: "Investments — Golden Investment Association" },
-      { name: "description", content: "Our investment strategies span global equities, fixed income, real assets, and selective private investments." },
+      { name: "description", content: "How GIA members pool savings to invest in profitable ventures, decided by a two-thirds majority vote." },
       { property: "og:title", content: "Investments — Golden Investment Association" },
-      { property: "og:description", content: "Strategies built for compounding, not for cycles." },
+      { property: "og:description", content: "Group investments, decided together." },
     ],
   }),
   component: InvestmentsPage,
 });
 
-const strategies = [
+const focuses = [
   {
-    name: "Global Compounders",
-    style: "Concentrated long-only equity",
-    desc: "A focused portfolio of approximately twenty businesses chosen for the durability of their returns on invested capital.",
-    horizon: "10+ years",
+    name: "Income-Generating Projects",
+    style: "Collective ventures",
+    desc: "Local enterprises and small-scale projects identified by members and approved by the General Assembly to generate ongoing income for the association.",
+    horizon: "1–3 years",
   },
   {
-    name: "Sovereign & Investment Grade",
-    style: "Liquid fixed income",
-    desc: "Capital preservation through high-quality sovereign and corporate debt, actively managed for duration and credit.",
-    horizon: "Cycle-aware",
+    name: "Asset Acquisition",
+    style: "Capital growth",
+    desc: "Purchasing productive assets — land, equipment, or other holdings — that appreciate in value and support members' long-term wealth.",
+    horizon: "3–5 years",
   },
   {
-    name: "Real Assets",
-    style: "Inflation-linked exposure",
-    desc: "Direct and listed exposure to infrastructure, timberland, and prime real estate aligned with long liabilities.",
-    horizon: "15+ years",
+    name: "Member Loan Portfolio",
+    style: "Internal lending",
+    desc: "Affordable credit extended to members in good standing, fully guaranteed by savings and co-guarantors. Interest earned strengthens the common pool.",
+    horizon: "Cycle-based",
   },
   {
-    name: "Private Opportunities",
-    style: "Bespoke co-investment",
-    desc: "Selective private credit and private equity opportunities sourced through the Association's network. Access by invitation only.",
-    horizon: "Lock-up varies",
+    name: "Group Savings Pool",
+    style: "Disciplined accumulation",
+    desc: "Monthly contributions that compound over the savings cycle, forming the base of capital from which all other investments are funded.",
+    horizon: "Per cycle",
   },
 ];
 
@@ -44,14 +44,14 @@ function InvestmentsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our Strategies"
-        title="Built for compounding. Not for cycles."
-        subtitle="A handful of disciplined strategies, each pursued with patience and conviction."
+        eyebrow="Group Investments"
+        title="We decide together. We grow together."
+        subtitle="After one year of disciplined saving, the membership collectively chooses where to invest. Every venture requires a two-thirds majority vote."
       />
 
       <section className="py-24">
         <div className="container-x grid md:grid-cols-2 gap-px bg-border">
-          {strategies.map((s) => (
+          {focuses.map((s) => (
             <div key={s.name} className="bg-background p-10 hover:bg-card transition-colors">
               <div className="text-xs uppercase tracking-[0.25em] text-gold">{s.style}</div>
               <h3 className="font-display text-3xl mt-3">{s.name}</h3>
@@ -67,10 +67,11 @@ function InvestmentsPage() {
 
       <section className="py-20 border-t border-border">
         <div className="container-x text-center max-w-2xl mx-auto">
-          <p className="text-sm uppercase tracking-[0.3em] text-gold">Important</p>
+          <p className="text-sm uppercase tracking-[0.3em] text-gold">Risk Notice</p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Detailed strategy documentation, fee schedules, and historical reporting
-            are made available to qualified members following an introductory meeting.
+            Past investment outcomes do not guarantee future returns. Members
+            acknowledge that all investments carry risk and that GIA cannot
+            guarantee profit or the return of capital from investment activities.
           </p>
         </div>
       </section>
