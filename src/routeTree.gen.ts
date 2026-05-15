@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as InvestmentsRouteImport } from './routes/investments'
 import { Route as InsightsRouteImport } from './routes/insights'
@@ -40,6 +41,11 @@ const SignupRoute = SignupRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
@@ -132,6 +141,7 @@ export interface FileRouteTypes {
     | '/insights'
     | '/investments'
     | '/login'
+    | '/privacy'
     | '/services'
     | '/signup'
     | '/team'
@@ -145,6 +155,7 @@ export interface FileRouteTypes {
     | '/insights'
     | '/investments'
     | '/login'
+    | '/privacy'
     | '/services'
     | '/signup'
     | '/team'
@@ -159,6 +170,7 @@ export interface FileRouteTypes {
     | '/insights'
     | '/investments'
     | '/login'
+    | '/privacy'
     | '/services'
     | '/signup'
     | '/team'
@@ -174,6 +186,7 @@ export interface RootRouteChildren {
   InsightsRoute: typeof InsightsRoute
   InvestmentsRoute: typeof InvestmentsRoute
   LoginRoute: typeof LoginRoute
+  PrivacyRoute: typeof PrivacyRoute
   ServicesRoute: typeof ServicesRoute
   SignupRoute: typeof SignupRoute
   TeamRoute: typeof TeamRoute
@@ -208,6 +221,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -289,6 +309,7 @@ const rootRouteChildren: RootRouteChildren = {
   InsightsRoute: InsightsRoute,
   InvestmentsRoute: InvestmentsRoute,
   LoginRoute: LoginRoute,
+  PrivacyRoute: PrivacyRoute,
   ServicesRoute: ServicesRoute,
   SignupRoute: SignupRoute,
   TeamRoute: TeamRoute,
