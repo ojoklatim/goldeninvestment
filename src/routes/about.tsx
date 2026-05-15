@@ -6,21 +6,33 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Golden Investment Association" },
-      { name: "description", content: "A century of disciplined stewardship. Learn about our heritage, structure, and principles." },
+      { name: "description", content: "GIA is a member-owned savings and investment group founded in 2025 in Adebe Cell, Oyam District, Uganda." },
       { property: "og:title", content: "About — Golden Investment Association" },
-      { property: "og:description", content: "A century of disciplined stewardship." },
+      { property: "og:description", content: "Vision, mission, objectives and values of GIA." },
     ],
   }),
   component: AboutPage,
 });
 
-const milestones = [
-  { year: "1924", text: "Founded in Geneva by a coalition of four industrial families seeking joint custody of capital." },
-  { year: "1956", text: "First institutional member admitted; investment committee formalised." },
-  { year: "1981", text: "London office opened; mandate extended to global equities." },
-  { year: "2008", text: "Preserved member capital through the financial crisis with positive annual return." },
-  { year: "2014", text: "Singapore office opened to serve Asian membership." },
-  { year: "2024", text: "Centennial year. 37 member institutions. $24B under stewardship." },
+const values = [
+  { name: "Integrity", desc: "Honesty and ethical conduct in every activity, always putting the association's interests above personal gain." },
+  { name: "Accountability", desc: "All members and leaders are responsible for funds, property, and obligations entrusted to them." },
+  { name: "Transparency", desc: "Financial records, decisions, and operations are properly documented and accessible to members." },
+  { name: "Discipline", desc: "Punctuality, adherence to financial commitments, and orderly conduct at all times." },
+  { name: "Teamwork", desc: "Cooperation and mutual respect, working together to achieve common goals." },
+  { name: "Professionalism", desc: "Competence, fairness, and responsibility in all association activities." },
+  { name: "Innovation", desc: "Creativity and openness to new ideas that enhance efficiency, growth, and sustainability." },
+];
+
+const objectives = [
+  "Promote and foster a culture of savings and disciplined financial planning",
+  "Mobilize resources for investment in profitable ventures",
+  "Provide financial literacy to members",
+  "Create income-generating projects for collective benefit",
+  "Encourage unity, accountability, and transparency",
+  "Support members during times of need",
+  "Provide affordable loans to members",
+  "Support asset acquisition and capital growth",
 ];
 
 function AboutPage() {
@@ -28,45 +40,74 @@ function AboutPage() {
     <>
       <PageHero
         eyebrow="About the Association"
-        title="A hundred years of patient capital."
-        subtitle="We exist to do one thing well: steward significant capital across generations, with discipline, candour, and aligned interests."
+        title="A community building wealth, together."
+        subtitle="Golden Investment Association (GIA) unites members under a shared commitment to financial discipline, collective action, and long-term wealth creation."
       />
 
       <section className="py-24">
         <div className="container-x grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
-            <SectionHeading eyebrow="Our Mandate" title="Custodians, not salespeople." />
+            <SectionHeading eyebrow="Who We Are" title="Member-owned. Locally rooted." />
           </div>
           <div className="lg:col-span-7 space-y-6 text-foreground/85 leading-relaxed">
             <p>
-              The Association is a private, member-owned investment body. We accept no
-              external distribution incentives and are paid solely by the institutions
-              and families who entrust capital to us.
+              GIA is a member-owned savings and investment group based in Adebe
+              Cell, Western Ward, Kamdini Town Council, Oyam District, Uganda.
+              Founded in 2025, we operate under the motto{" "}
+              <em>"Make Your Money Work Harder"</em> and the tagline{" "}
+              <em>"Invest Smart, Live Well."</em>
             </p>
             <p>
-              Our investment committee is governed by a charter unchanged in substance
-              since 1924: invest in what we understand, hold for the long term, and
-              protect against permanent loss above all else.
-            </p>
-            <p>
-              Membership is selective and entirely by introduction — a structure that
-              has allowed us to remain small enough to think clearly, and large enough
-              to access opportunities others cannot.
+              We are not a bank, microfinance institution, or regulated investment
+              fund. We are a voluntary group association governed by our
+              Constitution and By-Laws, providing a structured, transparent
+              platform through which members save, access affordable credit, and
+              participate in group investments.
             </p>
           </div>
         </div>
       </section>
 
       <section className="py-24 border-t border-border radial-green">
+        <div className="container-x grid lg:grid-cols-2 gap-16">
+          <div>
+            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Vision</div>
+            <p className="font-display text-3xl leading-tight">
+              To build sustainable wealth for members through long-term savings
+              and strategic investments.
+            </p>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Mission</div>
+            <p className="font-display text-3xl leading-tight">
+              To empower members through joint investment initiatives, financial
+              literacy, and collective action for long-term financial prosperity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 border-t border-border">
         <div className="container-x">
-          <SectionHeading eyebrow="A Century in Brief" title="Milestones." />
-          <div className="mt-16 grid md:grid-cols-2 gap-x-16 gap-y-10">
-            {milestones.map((m) => (
-              <div key={m.year} className="flex gap-8 border-l border-gold/40 pl-6">
-                <div>
-                  <div className="font-display text-3xl gold-gradient-text">{m.year}</div>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{m.text}</p>
-                </div>
+          <SectionHeading eyebrow="What We Set Out To Do" title="Our objectives." />
+          <ul className="mt-12 grid md:grid-cols-2 gap-x-12 gap-y-4 max-w-4xl">
+            {objectives.map((o) => (
+              <li key={o} className="flex gap-3 text-foreground/85 border-l border-gold/40 pl-4 py-1">
+                <span>{o}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="py-24 border-t border-border">
+        <div className="container-x">
+          <SectionHeading eyebrow="Core Values" title="Seven principles we hold ourselves to." />
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+            {values.map((v) => (
+              <div key={v.name} className="bg-background p-8">
+                <div className="text-xs uppercase tracking-[0.25em] text-gold">{v.name}</div>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
