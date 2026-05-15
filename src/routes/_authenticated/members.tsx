@@ -29,7 +29,7 @@ function MembersPage() {
       <PageHero
         eyebrow="Member Area"
         title={`Welcome, ${name}.`}
-        subtitle="Your private workspace for letters, reporting, and forum invitations."
+        subtitle="Your private workspace for savings statements, the GIA Constitution, and meeting notices."
       />
       <section className="py-20">
         <div className="container-x grid md:grid-cols-3 gap-px bg-border">
