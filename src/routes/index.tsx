@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, LineChart, Compass, Award } from "lucide-react";
+import { ArrowRight, ShieldCheck, Users, Sprout, HandCoins } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -7,14 +7,14 @@ import heroBg from "@/assets/hero-bg.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Golden Investment Association — Discreet stewardship of significant capital" },
+      { title: "Golden Investment Association — Together We Grow" },
       {
         name: "description",
         content:
-          "A private investment association serving institutions and significant family capital with disciplined, principled long-horizon investing.",
+          "A member-owned savings and investment group in Adebe Cell, Oyam District, Uganda. Save together, invest together, grow together.",
       },
       { property: "og:title", content: "Golden Investment Association" },
-      { property: "og:description", content: "Discreet stewardship of significant capital." },
+      { property: "og:description", content: "Make Your Money Work Harder. Invest Smart, Live Well." },
     ],
   }),
   component: HomePage,
@@ -22,32 +22,32 @@ export const Route = createFileRoute("/")({
 
 const pillars = [
   {
+    icon: Sprout,
+    title: "Disciplined savings",
+    body: "A minimum of UGX 50,000 each month builds the habit — and the capital — that long-term wealth requires.",
+  },
+  {
+    icon: HandCoins,
+    title: "Affordable loans",
+    body: "Members in good standing access fair, member-guaranteed credit during regular meetings.",
+  },
+  {
+    icon: Users,
+    title: "Group investments",
+    body: "After one year of saving, members vote together on profitable ventures — a two-thirds majority moves us forward.",
+  },
+  {
     icon: ShieldCheck,
-    title: "Capital preservation",
-    body: "We treat downside discipline as the precondition of every long compounding journey.",
-  },
-  {
-    icon: LineChart,
-    title: "Long horizon",
-    body: "Decisions framed in decades, not quarters — aligning portfolios with what truly compounds.",
-  },
-  {
-    icon: Compass,
-    title: "Independent thinking",
-    body: "Free of distribution incentives, we own positions because of conviction, not consensus.",
-  },
-  {
-    icon: Award,
-    title: "Aligned interests",
-    body: "Members invest alongside us. Our principals' wealth sits in the same strategies as yours.",
+    title: "Transparent governance",
+    body: "An elected Executive Committee, dual-signatory controls, and an external auditor protect every shilling.",
   },
 ];
 
 const stats = [
-  { k: "$24B", v: "Assets under stewardship" },
-  { k: "1924", v: "Founded a century ago" },
-  { k: "11.4%", v: "Annualised since inception" },
-  { k: "37", v: "Member institutions" },
+  { k: "2025", v: "Year founded" },
+  { k: "UGX 50K", v: "Monthly minimum saving" },
+  { k: "2/3", v: "Majority for investment decisions" },
+  { k: "100%", v: "Member-owned" },
 ];
 
 function HomePage() {
@@ -67,23 +67,24 @@ function HomePage() {
 
         <div className="relative container-x pt-32 pb-20">
           <div className="text-xs uppercase tracking-[0.4em] text-gold mb-6">
-            Est. 1924 — Geneva &middot; London &middot; Singapore
+            Est. 2025 — Adebe Cell &middot; Kamdini Town Council &middot; Oyam District
           </div>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.98] max-w-5xl">
-            Discreet stewardship of <span className="gold-gradient-text italic">significant capital.</span>
+            Together <span className="gold-gradient-text italic">we grow.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-foreground/85 leading-relaxed">
-            A private investment association serving institutions and family capital
-            with disciplined, principled, long-horizon investing.
+            Golden Investment Association is a member-owned savings and investment
+            group helping ordinary people make their money work harder — through
+            disciplined saving, affordable credit, and collective investment.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button asChild variant="gold" size="lg">
               <Link to="/contact">
-                Request an introduction <ArrowRight className="ml-1" />
+                Apply for membership <ArrowRight className="ml-1" />
               </Link>
             </Button>
             <Button asChild variant="goldOutline" size="lg">
-              <Link to="/about">Our philosophy</Link>
+              <Link to="/services">How GIA works</Link>
             </Button>
           </div>
         </div>
@@ -107,9 +108,9 @@ function HomePage() {
       <section className="py-28">
         <div className="container-x">
           <SectionHeading
-            eyebrow="Our Principles"
-            title="Four convictions that shape every decision."
-            subtitle="We do not chase the moment. We compound — patiently, deliberately, transparently."
+            eyebrow="What We Stand For"
+            title="Save. Borrow. Invest. Together."
+            subtitle="Four practical commitments that turn modest, regular contributions into lasting collective wealth."
           />
           <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
             {pillars.map((p) => (
@@ -127,29 +128,28 @@ function HomePage() {
       <section className="py-28 border-t border-border radial-green">
         <div className="container-x grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">A Letter from the Chair</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Our Motto</div>
             <blockquote className="font-display text-3xl md:text-4xl leading-tight italic">
-              "Wealth that endures is built quietly. Our work is to remain useful
-              across generations — not visible across cycles."
+              "Make your money work harder. Invest smart, live well."
             </blockquote>
             <div className="mt-8 hairline max-w-[120px]" />
             <div className="mt-6 text-sm text-muted-foreground">
-              Eleanor Ashcroft &nbsp;·&nbsp; Chair of the Investment Committee
+              Golden Investment Association &nbsp;·&nbsp; Adebe Cell, Oyam District
             </div>
           </div>
           <div className="space-y-6 text-foreground/85 leading-relaxed">
             <p>
-              For one hundred years the Association has served a small constellation
-              of families, foundations, and institutions for whom capital is a
-              responsibility, not a score.
+              GIA was founded in 2025 by neighbours in Adebe Cell who believed
+              that disciplined saving and collective decision-making could change
+              the financial future of their families.
             </p>
             <p>
-              Our membership is intentionally limited. Our portfolios are designed
-              to be understood. Our reporting is what we would want if we were on
-              the other side of the table — because, in fact, we are.
+              We are not a bank or a microfinance institution. We are a voluntary
+              association — governed by our Constitution, owned entirely by our
+              members, and accountable to one another at every meeting.
             </p>
             <Button asChild variant="link" className="text-gold p-0 h-auto">
-              <Link to="/about">Read our philosophy →</Link>
+              <Link to="/about">Read about GIA →</Link>
             </Button>
           </div>
         </div>
@@ -159,14 +159,14 @@ function HomePage() {
       <section className="py-24 border-t border-border">
         <div className="container-x text-center max-w-3xl mx-auto">
           <h2 className="font-display text-4xl md:text-5xl">
-            Membership is offered by introduction.
+            Membership is by introduction.
           </h2>
           <p className="mt-5 text-muted-foreground">
-            We welcome conversations with institutions and stewards of family
-            capital who share our long-term orientation.
+            Any willing adult who shares our long-term commitment may apply through
+            an existing member. The Executive Committee reviews each application.
           </p>
           <Button asChild variant="gold" size="lg" className="mt-10">
-            <Link to="/contact">Begin a private conversation</Link>
+            <Link to="/contact">Begin your application</Link>
           </Button>
         </div>
       </section>
