@@ -113,14 +113,14 @@ function ContactPage() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="mt-2 bg-input border-border"
-                placeholder="A few words about your situation, mandate, or interest."
+                placeholder="Tell us about your interest — membership application, a question about how GIA works, or something else."
               />
             </div>
             <Button type="submit" variant="gold" size="lg" className="w-full" disabled={busy}>
-              {busy ? "Sending..." : "Request introduction"}
+              {busy ? "Sending..." : "Send message"}
             </Button>
             <p className="text-xs text-muted-foreground">
-              All correspondence is treated in strict confidence.
+              Member information is treated in accordance with our Privacy Policy.
             </p>
           </form>
         </div>
