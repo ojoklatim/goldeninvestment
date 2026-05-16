@@ -31,8 +31,8 @@ export function Footer() {
         <div className="lg:col-span-2 max-w-sm">
           <div className="font-display text-2xl">Golden Investment Association</div>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-            A member-owned savings and investment group in Adebe Cell, Kamdini
-            Town Council, Oyam District, Uganda. Founded 2025 — Together We Grow.
+            Discreet stewardship of significant capital — built on a century-old
+            commitment to disciplined, principled investing.
           </p>
         </div>
 
@@ -40,20 +40,18 @@ export function Footer() {
           <h4 className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Navigate</h4>
           <ul className="space-y-2 text-sm text-foreground/80">
             <li><Link to="/about" className="hover:text-gold">About</Link></li>
-            <li><Link to="/services" className="hover:text-gold">How It Works</Link></li>
+            <li><Link to="/services" className="hover:text-gold">Services</Link></li>
             <li><Link to="/investments" className="hover:text-gold">Investments</Link></li>
-            <li><Link to="/team" className="hover:text-gold">Governance</Link></li>
-            <li><Link to="/insights" className="hover:text-gold">Notices</Link></li>
+            <li><Link to="/team" className="hover:text-gold">Team</Link></li>
+            <li><Link to="/insights" className="hover:text-gold">Insights</Link></li>
             <li><Link to="/contact" className="hover:text-gold">Contact</Link></li>
-            <li><Link to="/terms" className="hover:text-gold">Terms &amp; Conditions</Link></li>
-            <li><Link to="/privacy" className="hover:text-gold">Privacy Policy</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Stay informed</h4>
+          <h4 className="text-xs uppercase tracking-[0.25em] text-gold mb-4">Insights, monthly</h4>
           <p className="text-sm text-muted-foreground mb-4">
-            Receive association notices and updates by email.
+            Quiet observations from our research desk.
           </p>
           <form onSubmit={onSubscribe} className="flex gap-2">
             <Input
@@ -61,7 +59,7 @@ export function Footer() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
+              placeholder="you@firm.com"
               className="bg-input border-border"
             />
             <Button type="submit" variant="gold" disabled={busy}>
@@ -73,8 +71,8 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="container-x py-6 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} Golden Investment Association · Adebe Cell, Oyam District, Uganda</div>
-          <div>Governed by the GIA Constitution effective 1 January 2026. Past performance does not guarantee future returns.</div>
+          <div>© {new Date().getFullYear()} Golden Investment Association. All rights reserved.</div>
+          <div>Authorised &amp; regulated. Past performance is not indicative of future results.</div>
         </div>
       </div>
     </footer>

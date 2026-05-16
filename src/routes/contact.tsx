@@ -57,36 +57,34 @@ function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Get In Touch"
-        title="Apply, ask, or learn more."
-        subtitle="Send us a message about membership, the association, or general questions. The Secretary will respond through official GIA communication channels."
+        eyebrow="Begin a Conversation"
+        title="We respond personally."
+        subtitle="Membership begins with a quiet introduction. Share a few details and our member relations team will be in touch within two business days."
       />
 
       <section className="py-24">
         <div className="container-x grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5 space-y-10">
             <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Where We Meet</div>
-              <div className="text-foreground">Adebe Cell, Western Ward</div>
-              <div className="text-muted-foreground text-sm">Kamdini Town Council, Oyam District</div>
-              <div className="text-muted-foreground text-sm">Uganda</div>
+              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Geneva</div>
+              <div className="text-foreground">12 Quai du Mont-Blanc</div>
+              <div className="text-muted-foreground text-sm">1201 Geneva, Switzerland</div>
             </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Membership</div>
-              <div className="text-muted-foreground text-sm leading-relaxed">
-                New members are introduced by an existing member and approved by
-                the Executive Committee. The one-time entrance fee is UGX 50,000.
-              </div>
+              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">London</div>
+              <div className="text-foreground">8 St James's Square</div>
+              <div className="text-muted-foreground text-sm">London SW1Y 4JU</div>
             </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Founded</div>
-              <div className="text-muted-foreground text-sm">2025 — Together We Grow</div>
+              <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Singapore</div>
+              <div className="text-foreground">One Marina Boulevard, Level 20</div>
+              <div className="text-muted-foreground text-sm">Singapore 018989</div>
             </div>
             <div className="hairline max-w-[100px]" />
             <div className="space-y-3 text-sm text-muted-foreground">
-              <div className="flex items-center gap-3"><Mail size={14} className="text-gold" /> Through official channels</div>
-              <div className="flex items-center gap-3"><Phone size={14} className="text-gold" /> Via the GIA Secretary</div>
-              <div className="flex items-center gap-3"><MapPin size={14} className="text-gold" /> Adebe Cell, Oyam District</div>
+              <div className="flex items-center gap-3"><Mail size={14} className="text-gold" /> members@goldeninvestment.org</div>
+              <div className="flex items-center gap-3"><Phone size={14} className="text-gold" /> +41 22 555 0100</div>
+              <div className="flex items-center gap-3"><MapPin size={14} className="text-gold" /> By appointment</div>
             </div>
           </div>
 
@@ -113,14 +111,14 @@ function ContactPage() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="mt-2 bg-input border-border"
-                placeholder="Tell us about your interest — membership application, a question about how GIA works, or something else."
+                placeholder="A few words about your situation, mandate, or interest."
               />
             </div>
             <Button type="submit" variant="gold" size="lg" className="w-full" disabled={busy}>
-              {busy ? "Sending..." : "Send message"}
+              {busy ? "Sending..." : "Request introduction"}
             </Button>
             <p className="text-xs text-muted-foreground">
-              Member information is treated in accordance with our Privacy Policy.
+              All correspondence is treated in strict confidence.
             </p>
           </form>
         </div>
