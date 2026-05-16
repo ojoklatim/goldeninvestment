@@ -62,8 +62,10 @@ function HomePage() {
           height={1280}
           className="absolute inset-0 h-full w-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/30" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white/25" />
+        <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-white/15 blur-3xl" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/70 to-transparent" />
 
         <div className="relative container-x pt-32 pb-20">
           <div className="text-xs uppercase tracking-[0.4em] text-gold mb-6">
