@@ -1,4 +1,3 @@
-import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -9,14 +8,15 @@ const contactSchema = z.object({
 });
 
 export async function submitContact(data: z.infer<typeof contactSchema>) {
+  // Validate data client-side
   const parsed = contactSchema.parse(data);
-  const { error } = await supabase.from("contact_submissions").insert({
-    name: parsed.name,
-    email: parsed.email,
-    phone: parsed.phone || null,
-    message: parsed.message,
-  });
-  if (error) throw new Error("Could not submit your message. Please try again.");
+  
+  // Log message locally (for testing/mocking)
+  console.log("[Mock Contact Submission]:", parsed);
+  
+  // Simulate a network delay
+  await new Promise((resolve) => setTimeout(resolve, 600));
+  
   return { ok: true };
 }
 
@@ -25,12 +25,14 @@ const newsletterSchema = z.object({
 });
 
 export async function subscribeNewsletter(data: z.infer<typeof newsletterSchema>) {
+  // Validate data client-side
   const parsed = newsletterSchema.parse(data);
-  const { error } = await supabase
-    .from("newsletter_subscribers")
-    .insert({ email: parsed.email });
-  if (error && !error.message.includes("duplicate")) {
-    throw new Error("Could not subscribe. Please try again.");
-  }
+  
+  // Log subscription locally
+  console.log("[Mock Newsletter Subscription]:", parsed);
+  
+  // Simulate a network delay
+  await new Promise((resolve) => setTimeout(resolve, 400));
+  
   return { ok: true };
 }
