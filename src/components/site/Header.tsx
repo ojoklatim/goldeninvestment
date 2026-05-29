@@ -79,10 +79,10 @@ export function Header() {
           ) : (
             <>
               <Button asChild variant="ghost" size="sm">
-                <Link to="/login">Sign in</Link>
+                <a href="https://saccoflow.pages.dev/">Sign in</a>
               </Button>
               <Button asChild variant="gold" size="sm">
-                <Link to="/signup">Become a Member</Link>
+                <a href="https://saccoflow.pages.dev/">Become a Member</a>
               </Button>
             </>
           )}
@@ -122,12 +122,12 @@ export function Header() {
               </>
             ) : (
               <>
-                <Link to="/login" onClick={() => setOpen(false)} className="text-foreground/80">
+                <a href="https://saccoflow.pages.dev/" onClick={() => setOpen(false)} className="text-foreground/80">
                   Sign in
-                </Link>
-                <Link to="/signup" onClick={() => setOpen(false)} className="text-gold">
+                </a>
+                <a href="https://saccoflow.pages.dev/" onClick={() => setOpen(false)} className="text-gold">
                   Become a Member
-                </Link>
+                </a>
               </>
             )}
           </div>
