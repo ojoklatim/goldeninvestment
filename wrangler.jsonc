@@ -3,6 +3,5 @@
   "name": "golden-investment",
   "pages_build_output_dir": "dist/client",
   "compatibility_date": "2025-09-24",
-  "compatibility_flags": ["nodejs_compat"],
-  "main": "src/server.ts",
+  "compatibility_flags": ["nodejs_compat"]
 }
