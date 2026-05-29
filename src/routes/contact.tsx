@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { toast } from "sonner";
 import { PageHero } from "@/components/site/PageHero";
@@ -31,7 +30,6 @@ const schema = z.object({
 });
 
 function ContactPage() {
-  const submit = useServerFn(submitContact);
   const [busy, setBusy] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
@@ -44,7 +42,7 @@ function ContactPage() {
     }
     setBusy(true);
     try {
-      await submit({ data: parsed.data });
+      await submitContact(parsed.data);
       toast.success("Thank you — a member of our team will reply personally.");
       setForm({ name: "", email: "", phone: "", message: "" });
     } catch (err) {

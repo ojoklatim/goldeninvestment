@@ -1,13 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { useServerFn } from "@tanstack/react-start";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { subscribeNewsletter } from "@/lib/forms.functions";
 
 export function Footer() {
-  const subscribe = useServerFn(subscribeNewsletter);
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -15,7 +13,7 @@ export function Footer() {
     e.preventDefault();
     setBusy(true);
     try {
-      await subscribe({ data: { email } });
+      await subscribeNewsletter({ email });
       toast.success("Subscribed. Welcome to our circle.");
       setEmail("");
     } catch {

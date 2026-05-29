@@ -4,12 +4,10 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
 import { useEffect } from "react";
 
-import appCss from "../styles.css?url";
+import "../styles.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
@@ -55,45 +53,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Golden Investment Association — Discreet stewardship of significant capital" },
-      {
-        name: "description",
-        content:
-          "A private investment association serving institutions and significant family capital with disciplined, principled investment management.",
-      },
-      { property: "og:title", content: "Golden Investment Association — Discreet stewardship of significant capital" },
-      { property: "og:description", content: "Golden Growth Hub is a website for the Golden Investment Association, offering customizable color templates." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Golden Investment Association — Discreet stewardship of significant capital" },
-      { name: "description", content: "Golden Growth Hub is a website for the Golden Investment Association, offering customizable color templates." },
-      { name: "twitter:description", content: "Golden Growth Hub is a website for the Golden Investment Association, offering customizable color templates." },
-    ],
-    links: [{ rel: "stylesheet", href: appCss }],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function AuthInvalidator() {
   const router = useRouter();
